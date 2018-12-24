@@ -22,7 +22,7 @@ namespace SRWeatherMod
                     }
 
                     cfg.Read("LoadPriority", new UMFConfigString("Normal"));
-                    cfg.Write("MinVersion", new UMFConfigString("0.48"));
+                    cfg.Write("MinVersion", new UMFConfigString("0.50"));
                     //cfg.Write("MaxVersion", new UMFConfigString("0.54.99999.99999"));
                     cfg.Write("UpdateURL", new UMFConfigString(@"https://raw.githubusercontent.com/EmeraldPlay27/SRWeatherMod/master/version.txt"));
                     cfg.Write("ConfigVersion", new UMFConfigString(configVersion));
