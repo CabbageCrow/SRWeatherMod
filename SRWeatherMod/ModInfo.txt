@@ -1,2 +1,4 @@
-﻿Use this file to provide info, changelogs and news.
-The text is shown everytime someone installs the mod, or it is automatically updated using UpdateURL.
+This mod brings back the old rain feature from the prototypes. Every 3-12 hours, rain will trigger. It's purely cosmetic and has no effect on the Tarr or other slimes.
+
+Version 1.0
+-First public release
