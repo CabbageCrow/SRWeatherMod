@@ -21,9 +21,10 @@ namespace SRWeatherMod
                         SRWeatherMod.Log("The config file was outdated and has been deleted. A new config will be generated.");
                     }
 
+                    cfg.Write("SupportsHotLoading", new UMFConfigBool(false));
                     cfg.Read("LoadPriority", new UMFConfigString("Normal"));
                     cfg.Write("MinVersion", new UMFConfigString("0.50"));
-                    //cfg.Write("MaxVersion", new UMFConfigString("0.54.99999.99999"));
+                    //cfg.Write("MaxVersion", new UMFConfigString("0.54.99999.99999")); //Uncomment if a future release is expected to break the mod
                     cfg.Write("UpdateURL", new UMFConfigString(@"https://raw.githubusercontent.com/EmeraldPlay27/SRWeatherMod/master/version.txt"));
                     cfg.Write("ConfigVersion", new UMFConfigString(configVersion));
 
