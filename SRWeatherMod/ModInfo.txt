@@ -1,10 +1,13 @@
 ﻿This mod brings back the old rain feature from the prototypes. Every 3-12 hours, rain will trigger. It's purely cosmetic and has no effect on the Tarr or other slimes.
 
 
-Credits:
-Project Leader - EmeraldPlay27
-Coding - UMFDev
-
-
 Version 1.0
--First public release
+ - First public release
+
+
+Credits:
+ Original Creator - EmeraldPlay27
+ Slime Icons - HKdragonboy#6616
+ Porting to UMF Mod - UMFDev
+ Coding - UMFDev
+ Maintaining - CabbageCrow
