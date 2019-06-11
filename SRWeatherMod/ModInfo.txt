@@ -7,7 +7,6 @@ Version 1.0
 
 Credits:
  Original Creator - EmeraldPlay27
- Slime Icons - HKdragonboy#6616
  Porting to UMF Mod - UMFDev
  Coding - UMFDev
  Maintaining - CabbageCrow
