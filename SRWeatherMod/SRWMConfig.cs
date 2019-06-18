@@ -1,13 +1,21 @@
 ﻿using System;
+using System.ComponentModel;
 using UModFramework.API;
 
 namespace SRWeatherMod
 {
+    public enum WeatherOptions
+    {
+        No_Weather,
+        Changing_Weather,
+        Always_Raining
+    }
+
     internal class SRWMConfig
     {
-        private static readonly string configVersion = "1.0";
+        private static readonly string configVersion = "1.1";
 
-        public static bool RainEnabled;
+        public static WeatherOptions WeatherOption;
 
         internal void Load()
         {
@@ -34,7 +42,20 @@ namespace SRWeatherMod
 
                     SRWeatherMod.Log("Finished UMF Settings.");
 
-                    RainEnabled = cfg.Read("RainEnabled", new UMFConfigBool(true, false, false), "Should rain be enabled? Changing this setting takes effect immediately, although if raining it won't stop until next weather change.");
+                    //RainEnabled = cfg.Read("RainEnabled", new UMFConfigBool(true, false, false), "Should rain be enabled? Changing this setting takes effect immediately, although if raining it won't stop until next weather change.");
+                    var weatherString = cfg.Read("WeatherOption", new UMFConfigString(WeatherOptions.Changing_Weather.ToString(), 
+                        WeatherOptions.No_Weather.ToString(), false, false, Enum.GetNames(typeof(WeatherOptions))));
+                    try
+                    {
+                        WeatherOption = (WeatherOptions)Enum.Parse(typeof(WeatherOptions), weatherString, true);
+                    }catch(Exception)
+                    {
+                        WeatherOption = WeatherOptions.Changing_Weather;
+                    }
+
+                    var ambianceDirector = SRSingleton<SceneContext>.Instance?.AmbianceDirector;
+                    if(ambianceDirector != null)
+                        WMShared.SetWeather(ambianceDirector);
 
                     SRWeatherMod.Log("Finished loading settings.");
                 }

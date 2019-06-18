@@ -17,7 +17,7 @@
     <Configurations>Release</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Release\</OutputPath>
@@ -26,6 +26,9 @@
     <WarningLevel>4</WarningLevel>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net35|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>$(GamePath)uModFramework\Lib\net35\0Harmony.dll</HintPath>
@@ -33,7 +36,7 @@
       <SpecificVersion>false</SpecificVersion>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>$(GamePath)$(ManagedFolder)Assembly-CSharp.dll</HintPath>
+      <HintPath>$(GamePath)$(ManagedFolder)publicized_assemblies\Assembly-CSharp_publicized.dll</HintPath>
       <Private>False</Private>
       <SpecificVersion>false</SpecificVersion>
     </Reference>

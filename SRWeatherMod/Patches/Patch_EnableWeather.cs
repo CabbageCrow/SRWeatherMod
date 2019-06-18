@@ -9,17 +9,9 @@ namespace SRWeatherMod.Patches
     {
         public static void Postfix(AmbianceDirector __instance)
         {
-            __instance.weatherEnabled = SRWMConfig.RainEnabled;
+            WMShared.SetWeather(__instance);
+
         }
     }
 
-    [HarmonyPatch(typeof(AmbianceDirector))]
-    [HarmonyPatch("Update")]
-    static class Patch_EnableWeather2
-    {
-        public static void Prefix(AmbianceDirector __instance)
-        {
-            __instance.weatherEnabled = SRWMConfig.RainEnabled;
-        }
-    }
 }
